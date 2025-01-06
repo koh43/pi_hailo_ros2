@@ -15,7 +15,7 @@ Please install the latest Ubuntu LTS version available from the RPi-Imager.
   ```
   sudo dpkg --install hailort_<version>_$(dpkg --print-architecture).deb hailort-pcie-driver_<version>_all.deb
   ```
-  (Note: A prompt regarding using DKMS (Dynamic Kernel Module Support) is expected, and it is recommended to be approved.)
+  (Note: A prompt regarding using DKMS (Dynamic Kernel Module Support) is expected and recommended to be approved.)
 
 - Reboot your Raspberry Pi.
 - Run
@@ -41,6 +41,6 @@ Please install the latest Ubuntu LTS version available from the RPi-Imager.
 - Go to the official [Software Downloads website](https://hailo.ai/developer-zone/software-downloads/).
 - Download " TAPPAS – Linux installer".
 - Here is the [official instruction](https://github.com/hailo-ai/tappas/blob/master/docs/installation/manual-install.rst).
-- Before you go through the installation steps, please modify the followings:
+- Before you go through the installation steps, please modify the following:
     - Under tappas_<your_tappas_v>/core/requirements/gstreamer_requirements.txt, change numpy version to 1.26.4.
-    - Under tappas_<your_tappas_v>/downloader/requirements.txt, 
+    - Under tappas_<your_tappas_v>/downloader/requirements.txt, remove the versions (==x.x.x) specified for requests and boto3.

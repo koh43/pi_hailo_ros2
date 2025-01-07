@@ -38,9 +38,17 @@ Please install the latest Ubuntu LTS version available from the RPi-Imager.
   It is normal to have <N/A>s printed in the last three components.
 
 ### TAPPAS
+#### Setup Python Virtual Environment (venv, just for compiling TAPPAS)
+```
+mkdir -p venv
+python3 -m venv --system-site-packages venv/tappas
+source venv/tappas/bin/activate
+```
 - Go to the official [Software Downloads website](https://hailo.ai/developer-zone/software-downloads/).
 - Download " TAPPAS – Linux installer".
 - Here is the [official instruction](https://github.com/hailo-ai/tappas/blob/master/docs/installation/manual-install.rst).
 - Before you go through the installation steps, please modify the following:
-    - Under tappas_<your_tappas_v>/core/requirements/gstreamer_requirements.txt, change numpy version to 1.26.4.
-    - Under tappas_<your_tappas_v>/downloader/requirements.txt, remove the versions (==x.x.x) specified for requests and boto3.
+    - Under tappas_<your_tappas_v>/core/requirements/gstreamer_requirements.txt, change **numpy** version to **1.26.4**.
+    - Under tappas_<your_tappas_v>/core/requirements/requirements.txt, remove the versions (==x.x.x) specified for **ninja** and **meson**.
+    - Under tappas_<your_tappas_v>/downloader/requirements.txt, remove the versions (==x.x.x) specified for **requests** and **boto3**.
+    - Under tappas_<your_tappas_v>/tools/run_app, make a copy of requirements_22_04.txt and name it **requirements_24_04.txt**.

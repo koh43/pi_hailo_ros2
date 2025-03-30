@@ -40,14 +40,37 @@ Please install the latest Ubuntu LTS version available from the RPi-Imager.
 ### ROS2 Setup
 #### Installation
 - Please follow the [official installation steps for Jazzy](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) (ROS2 for Ubuntu 24.04 LTS).
-- 
+- Initialize ROS2
+```
+source /opt/ros/jazzy/setup.bash
+```
+- Create a workspace and clone this repo:
+```
+mkdir -p ~/pi_hailo_ros2_ws/src
+cd ~/pi_hailo_ros2_ws/src/
+git clone https://github.com/koh43/pi_hailo_ros2.git
+```
+- Create a Python virtual environment for this ROS2 package and for installing TAPPAS
+```
+sudo apt install python3-venv
+cd ~/pi_hailo_ros2_ws/
+python3 -m venv --system-site-packages ./pi_hailo_ros2_venv
+source ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/bin/activate
+# For ROS2 builds
+touch ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/COLCON_IGNORE
+```
+- Build the ROS2 package:
+```
+sudo apt install python3-colcon-common-extensions
+colcon build --symlink-install
+source ~/pi_hailo_ros2_ws/install/local_setup.bash
+```
 
 ### TAPPAS
-#### Setup Python Virtual Environment (venv, just for compiling TAPPAS)
+#### Setup Python Virtual Environment
 ```
-mkdir -p venv
-python3 -m venv --system-site-packages venv/tappas
-source venv/tappas/bin/activate
+cd ~
+source ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/bin/activate
 ```
 - Go to the official [Software Downloads website](https://hailo.ai/developer-zone/software-downloads/).
 - Download " TAPPAS – Linux installer".
@@ -98,7 +121,7 @@ Plugin Details:
   +-- 18 elements
 ```
 
-#### Installation Issues
+## Installation Issues
 If you have the following error when installing HailoRT,
 ```
 /share/opt/hailo/linux/pcie /

@@ -18,7 +18,7 @@ Please install the latest Ubuntu LTS version available from the RPi-Imager.
   (Note: A prompt regarding using DKMS (Dynamic Kernel Module Support) is expected and recommended to be approved.)
 
 - Reboot your Raspberry Pi.
-- Run
+- Please run
   ```
   hailortcli fw-control identify
   ```
@@ -36,6 +36,11 @@ Please install the latest Ubuntu LTS version available from the RPi-Imager.
   Product Name: <N/A>
   ```
   It is normal to have <N/A>s printed in the last three components.
+
+### ROS2 Setup
+#### Installation
+- Please follow the [official installation steps for Jazzy](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) (ROS2 for Ubuntu 24.04 LTS).
+- 
 
 ### TAPPAS
 #### Setup Python Virtual Environment (venv, just for compiling TAPPAS)
@@ -91,4 +96,25 @@ Plugin Details:
 
   18 features:
   +-- 18 elements
+```
+
+#### Installation Issues
+If you have the following error when installing HailoRT,
+```
+/share/opt/hailo/linux/pcie /
+make[1]: *** /lib/modules/6.8.0-1020-raspi//build: No such file or directory.  Stop.
+make: *** [Makefile:100: clean] Error 2
+Failed. Exited with status 2. See /var/log/hailort-pcie-driver.deb.log
+Failed at 50
+   47	}
+   48	
+   49	function compile_and_install_pcie_driver_without_dkms() {
+   50	    make clean &>> $LOG
+   51	    make all &>> $LOG
+   52	    make install &>> $LOG
+   53	}
+```
+try to run the following code to install the right kernel version for HailoRT
+```
+sudo apt install linux-headers-$(uname -r)
 ```

@@ -80,6 +80,7 @@ source ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/bin/activate
     - Under tappas_<your_tappas_v>/core/requirements/requirements.txt, remove the versions (==x.x.x) specified for **ninja** and **meson**.
     - Under tappas_<your_tappas_v>/downloader/requirements.txt, remove the versions (==x.x.x) specified for **requests** and **boto3**.
     - Under tappas_<your_tappas_v>/tools/run_app, make a copy of requirements_22_04.txt and name it **requirements_24_04.txt**.
+    - Comment out line 115 in tappas_<your_tappas_v>/install.sh
 
 #### Verification
 Try to run

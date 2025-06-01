@@ -54,10 +54,10 @@ git clone https://github.com/koh43/pi_hailo_ros2.git
 ```
 sudo apt install python3-venv
 cd ~/pi_hailo_ros2_ws/
-python3 -m venv --system-site-packages ./pi_hailo_ros2_venv
-source ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/bin/activate
+python3 -m venv --system-site-packages ./venv
+source ~/pi_hailo_ros2_ws/venv/bin/activate
 # For ROS2 builds
-touch ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/COLCON_IGNORE
+touch ~/pi_hailo_ros2_ws/venv/COLCON_IGNORE
 ```
 - Build the ROS2 package:
 ```

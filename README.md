@@ -70,7 +70,7 @@ source ~/pi_hailo_ros2_ws/install/local_setup.bash
 #### Setup Python Virtual Environment
 ```
 cd ~
-source ~/pi_hailo_ros2_ws/pi_hailo_ros2_venv/bin/activate
+source ~/pi_hailo_ros2_ws/venv/bin/activate
 ```
 - Go to the official [Software Downloads website](https://hailo.ai/developer-zone/software-downloads/).
 - Download " TAPPAS – Linux installer".

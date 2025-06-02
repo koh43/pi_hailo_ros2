@@ -121,6 +121,20 @@ Plugin Details:
   18 features:
   +-- 18 elements
 ```
+### PyHailoRT
+#### Build Steps
+- Clone the HailoRT repo:
+```
+git clone https://github.com/hailo-ai/hailort.git
+```
+- Move to the following directory:
+```
+cd hailort/hailort/libhailort/bindings/python/platform
+```
+- Build python wheel:
+```
+python setup.py bdist_wheel
+```
 
 ## Installation Issues
 If you have the following error when installing HailoRT,

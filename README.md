@@ -156,3 +156,11 @@ try to run the following code to install the right kernel version for HailoRT
 ```
 sudo apt install linux-headers-$(uname -r)
 ```
+
+---
+
+## ☕ Support
+
+<a href="https://www.buymeacoffee.com/koh43" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee"></a>
+
+---
